@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-""" function named index_range that takes two 
+""" function named index_range that takes two
 integer arguments page and page_size """
 
 from typing import Tuple
