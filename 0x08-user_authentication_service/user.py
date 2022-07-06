@@ -10,7 +10,8 @@ Base = declarative_base()
 
 
 class User(Base):
-    """ User class - Create a SQLAlchemy model named User for a database table named users """
+    """ User class - Create SQLAlchemy model named
+            User for DB table named users """
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
