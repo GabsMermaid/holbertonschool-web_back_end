@@ -1,12 +1,23 @@
-export default function getFullResponseFromAPI(success) {
-  return new Promise((resolve, reject) => {
-    if (success) {
-      resolve({
-        status: 200,
-        body: 'Success',
-      });
-    } else {
-      reject(new Error('The fake API is not working currently'));
-    }
-  });
+import { uploadPhoto, createUser } from './utils';
+
+async function asyncUploadUser() {
+  let photo;
+  let user;
+
+  try {
+    photo = await uploadPhoto();
+    user = await createUser();
+  } catch (err) {
+    photo = null;
+    user = null;
+  }
+
+  const uploadUser = {
+    photo,
+    user,
+  };
+
+  return uploadUser;
 }
+
+export default asyncUploadUser;
